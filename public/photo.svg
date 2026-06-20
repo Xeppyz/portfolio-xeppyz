@@ -1,0 +1,95 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 400 400"
+  width="400"
+  height="400"
+>
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#0b0d12"/>
+    </radialGradient>
+    <!-- Glow halo accent -->
+    <radialGradient id="glow" cx="50%" cy="38%" r="45%">
+      <stop offset="0%" stop-color="#6ea8fe" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#6ea8fe" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Skin tone gradient -->
+    <radialGradient id="face-grad" cx="50%" cy="42%" r="50%">
+      <stop offset="0%" stop-color="#d4a985"/>
+      <stop offset="100%" stop-color="#b5835a"/>
+    </radialGradient>
+    <radialGradient id="hair-grad" cx="50%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#2d1f12"/>
+      <stop offset="100%" stop-color="#1a0f07"/>
+    </radialGradient>
+    <!-- Glass border mask -->
+    <clipPath id="circle-clip">
+      <circle cx="200" cy="200" r="180"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bg-grad)"/>
+
+  <!-- Accent glow behind figure -->
+  <ellipse cx="200" cy="160" rx="160" ry="140" fill="url(#glow)"/>
+
+  <!-- Clipped portrait content -->
+  <g clip-path="url(#circle-clip)">
+    <!-- Torso / shoulders (dark hoodie) -->
+    <ellipse cx="200" cy="370" rx="130" ry="80" fill="#0f1219"/>
+    <path
+      d="M90,340 Q130,290 200,280 Q270,290 310,340 L340,400 L60,400 Z"
+      fill="#141922"
+    />
+    <!-- Neck -->
+    <rect x="182" y="258" width="36" height="34" rx="8" fill="#c49070"/>
+    <!-- Head shape -->
+    <ellipse cx="200" cy="220" rx="74" ry="86" fill="url(#face-grad)"/>
+    <!-- Hair top -->
+    <ellipse cx="200" cy="152" rx="76" ry="50" fill="url(#hair-grad)"/>
+    <path
+      d="M126,195 Q120,145 140,125 Q165,100 200,96 Q235,100 260,125 Q280,145 274,195"
+      fill="url(#hair-grad)"
+    />
+    <!-- Ears -->
+    <ellipse cx="127" cy="222" rx="12" ry="16" fill="#c08060"/>
+    <ellipse cx="273" cy="222" rx="12" ry="16" fill="#c08060"/>
+    <!-- Eyes -->
+    <ellipse cx="175" cy="218" rx="10" ry="7" fill="#1a1209"/>
+    <ellipse cx="225" cy="218" rx="10" ry="7" fill="#1a1209"/>
+    <!-- Eye highlights -->
+    <circle cx="180" cy="215" r="2.5" fill="#ffffff" opacity="0.7"/>
+    <circle cx="230" cy="215" r="2.5" fill="#ffffff" opacity="0.7"/>
+    <!-- Nose -->
+    <path d="M197,228 Q192,244 198,250 Q203,253 206,250 Q212,244 203,228" fill="none" stroke="#a07050" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Mouth: slight smile -->
+    <path d="M183,268 Q200,278 217,268" fill="none" stroke="#8a5f3f" stroke-width="2" stroke-linecap="round"/>
+    <!-- Eyebrows -->
+    <path d="M163,207 Q175,200 187,205" fill="none" stroke="#2a1a08" stroke-width="3" stroke-linecap="round"/>
+    <path d="M213,205 Q225,200 237,207" fill="none" stroke="#2a1a08" stroke-width="3" stroke-linecap="round"/>
+    <!-- Subtle accent glow on face edge -->
+    <ellipse cx="200" cy="200" rx="74" ry="86" fill="none" stroke="#6ea8fe" stroke-width="1" opacity="0.12"/>
+  </g>
+
+  <!-- Glass border ring -->
+  <circle
+    cx="200"
+    cy="200"
+    r="180"
+    fill="none"
+    stroke="#6ea8fe"
+    stroke-width="2"
+    opacity="0.35"
+  />
+  <!-- Subtle inner ring -->
+  <circle
+    cx="200"
+    cy="200"
+    r="176"
+    fill="none"
+    stroke="rgba(255,255,255,0.08)"
+    stroke-width="1"
+  />
+</svg>
