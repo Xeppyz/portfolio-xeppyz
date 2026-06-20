@@ -7,6 +7,7 @@ import Projects from './sections/Projects';
 import ProjectModal from './sections/ProjectModal';
 import Experience from './sections/Experience';
 import Playground from './sections/Playground';
+import Contact from './sections/Contact';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -19,6 +20,7 @@ export default function App() {
         <Projects onOpen={setSelectedProject} />
         <Experience />
         <Playground />
+        <Contact />
       </main>
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </>
