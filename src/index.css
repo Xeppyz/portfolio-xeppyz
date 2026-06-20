@@ -1,91 +1,65 @@
-/* ─── Tailwind directives ──────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Google Fonts ─────────────────────────────────────────────────────────── */
-/* NOTE: En producción, mover este @import al <head> del index.html con
-   <link rel="preconnect"> para evitar bloqueo de render. Aquí por comodidad
-   de desarrollo. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-/* ─── Base layer ───────────────────────────────────────────────────────────── */
 @layer base {
   :root {
-    /* Glass variables — un solo sitio, el diseñador ajusta aquí */
-    --glass-bg: rgba(255, 255, 255, 0.06);
-    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255,255,255,0.06);
+    --glass-border: rgba(255,255,255,0.12);
     --glass-blur: 14px;
 
     /* Accent RGB splits para rgba() dinámicos */
     --accent-rgb: 110, 168, 254;
     --accent2-rgb: 181, 140, 255;
   }
-
   html {
     scroll-behavior: smooth;
-    /* Prevenir zoom en iOS al enfocar inputs */
     -webkit-text-size-adjust: 100%;
   }
-
   body {
     @apply bg-bg-900 text-text-100 font-sans antialiased;
-    /* min-h-dvh: usa dynamic viewport height en mobile (evita el 100vh clásico) */
     min-height: 100dvh;
   }
 
-  /* Focus visible por defecto para todos los interactivos */
+  /* Focus visible */
   :focus-visible {
     outline: 2px solid #6ea8fe;
     outline-offset: 3px;
     border-radius: 4px;
   }
 
-  /* Headings heredan font-heading */
+  /* Headings inherit font-heading */
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
 
-  /* Scrollbar customizada (webkit) — mantiene estética oscura */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #0b0d12;
-  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0b0d12; }
   ::-webkit-scrollbar-thumb {
     background: rgba(110, 168, 254, 0.3);
     border-radius: 3px;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(110, 168, 254, 0.5);
-  }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(110, 168, 254, 0.5); }
 
-  /* Selección de texto */
+  /* Text selection */
   ::selection {
     background: rgba(110, 168, 254, 0.25);
     color: #f4f6fb;
   }
 }
 
-/* ─── Components layer ─────────────────────────────────────────────────────── */
 @layer components {
-  /*
-   * .glass — clase de componente central del sistema glassmorphism.
-   * Uso: <div class="glass"> o vía el componente Glass.tsx.
-   * NO añadir propiedades visuales adicionales aquí; ir a las utilidades
-   * Tailwind en cada componente para variantes (padding, margin, etc.).
-   */
   .glass {
-    @apply border shadow-glass;
-    border-radius: var(--glass-radius, 1rem);
+    @apply rounded-2xl border shadow-glass;
     background: var(--glass-bg);
     border-color: var(--glass-border);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
 
-  /* Variante hover: eleva la luminosidad del borde y la sombra */
   .glass-hover {
     @apply glass transition-shadow duration-200;
   }
@@ -94,7 +68,6 @@
     border-color: rgba(255, 255, 255, 0.20);
   }
 
-  /* Variante modal: blur más agresivo para dialogs */
   .glass-modal {
     @apply glass;
     backdrop-filter: blur(24px);
@@ -102,7 +75,6 @@
     --glass-bg: rgba(255, 255, 255, 0.09);
   }
 
-  /* Tag/chip pill — para filtros de proyectos y tech stacks */
   .tag-pill {
     @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-mono
            border border-white/10 bg-white/5 text-text-300
@@ -113,20 +85,18 @@
     @apply border-accent/40 bg-accent/10 text-accent;
   }
 
-  /* Botón primario — CTA principal */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-glass
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-2xl
            bg-accent/10 border border-accent/30 text-accent font-heading font-semibold
            transition-all duration-200 cursor-pointer
            hover:bg-accent/20 hover:border-accent/60 hover:shadow-accent-glow
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg-900;
-    min-height: 44px; /* touch target mínimo */
+    min-height: 44px;
   }
 
-  /* Botón secundario */
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-glass
-           border border-white/12 text-text-300 font-heading
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl
+           border border-white/10 text-text-300 font-heading
            transition-all duration-200 cursor-pointer
            hover:border-white/25 hover:text-text-100
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
@@ -134,33 +104,20 @@
   }
 }
 
-/* ─── Utilities layer ──────────────────────────────────────────────────────── */
 @layer utilities {
-  /*
-   * reveal / is-visible — animación de scroll reveal.
-   * El hook useScrollReveal añade .is-visible al entrar al viewport.
-   * prefers-reduced-motion: se muestra sin animar (ver media query más abajo).
-   */
   .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    @apply opacity-0 translate-y-8 transition-all duration-500 ease-out;
+  }
+  .is-visible {
+    @apply opacity-100 translate-y-0;
   }
 
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Delays para stagger (usados inline con style o clases) */
   .reveal-delay-1 { transition-delay: 60ms; }
   .reveal-delay-2 { transition-delay: 120ms; }
   .reveal-delay-3 { transition-delay: 180ms; }
   .reveal-delay-4 { transition-delay: 240ms; }
   .reveal-delay-5 { transition-delay: 300ms; }
 
-  /* Gradiente de texto accent */
   .text-gradient-accent {
     background: linear-gradient(135deg, #6ea8fe 0%, #b58cff 100%);
     -webkit-background-clip: text;
@@ -168,20 +125,17 @@
     background-clip: text;
   }
 
-  /* Línea decorativa de timeline */
   .timeline-line {
     @apply absolute left-4 top-8 bottom-0 w-px;
     background: linear-gradient(to bottom, rgba(110,168,254,0.4) 0%, rgba(181,140,255,0.1) 100%);
   }
 
-  /* Nodo del timeline */
   .timeline-node {
     @apply absolute left-1 top-6 w-6 h-6 rounded-full border-2 border-accent/60 bg-bg-900
            flex items-center justify-center;
   }
 }
 
-/* ─── Fallback sin backdrop-filter ────────────────────────────────────────── */
 @supports not (backdrop-filter: blur(1px)) {
   .glass,
   .glass-hover,
@@ -190,21 +144,10 @@
   }
 }
 
-/* ─── prefers-reduced-motion ───────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
-  }
-
-  /* El reveal se muestra directamente sin la transición */
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 }
