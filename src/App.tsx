@@ -4,9 +4,11 @@ import NavBar from './components/NavBar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Projects from './sections/Projects';
+import ProjectModal from './sections/ProjectModal';
+import Experience from './sections/Experience';
 
 export default function App() {
-  const [_selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   return (
     <>
       <NavBar />
@@ -14,7 +16,9 @@ export default function App() {
         <Hero />
         <About />
         <Projects onOpen={setSelectedProject} />
+        <Experience />
       </main>
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </>
   );
 }
