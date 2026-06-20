@@ -12,7 +12,10 @@ export default function ProjectCard({ project, onOpen }: Props) {
       role="button"
       tabIndex={0}
       onKeyDown={(e: React.KeyboardEvent) => {
-        if (e.key === 'Enter' || e.key === ' ') onOpen(project);
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onOpen(project);
+        }
       }}
       aria-label={`Ver detalles de ${project.title}`}
     >

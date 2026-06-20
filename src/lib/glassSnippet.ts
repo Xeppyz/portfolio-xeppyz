@@ -20,8 +20,8 @@ export function toGlassCss(s: GlassSettings): string {
   backdrop-filter: blur(${blur}px);
   -webkit-backdrop-filter: blur(${blur}px);
   border-radius: ${radius}px;
-  border: 1px solid rgba(255, 255, 255, ${(opacity * 2).toFixed(2)});
-  background-image: linear-gradient(${angle}deg, rgba(255,255,255,${(opacity * 1.5).toFixed(2)}), rgba(255,255,255,0));
+  border: 1px solid rgba(255, 255, 255, ${Math.min(opacity * 2, 1).toFixed(2)});
+  background-image: linear-gradient(${angle}deg, rgba(255,255,255,${Math.min(opacity * 1.5, 1).toFixed(2)}), rgba(255,255,255,0));
 }`;
 }
 

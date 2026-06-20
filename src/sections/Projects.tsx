@@ -68,11 +68,9 @@ export default function Projects({ onOpen }: Props) {
         {/* Grid */}
         {shown.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {shown.map((project, i) => (
+            {shown.map((project) => (
               <div
                 key={project.id}
-                className="reveal is-visible"
-                style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <ProjectCard project={project} onOpen={onOpen} />
               </div>

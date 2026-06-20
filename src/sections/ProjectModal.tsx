@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Project } from '../data/projects';
 import Glass from '../components/Glass';
@@ -9,6 +9,17 @@ type Props = {
 };
 
 export default function ProjectModal({ project, onClose }: Props) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Focus the close button when modal opens
+  useEffect(() => {
+    if (project) {
+      // Small timeout to let AnimatePresence mount
+      const t = setTimeout(() => closeButtonRef.current?.focus(), 50);
+      return () => clearTimeout(t);
+    }
+  }, [project]);
+
   // Close on Escape key
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -51,6 +62,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   {project.title}
                 </h2>
                 <button
+                  ref={closeButtonRef}
                   onClick={onClose}
                   aria-label="Cerrar"
                   className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg text-text-300 hover:text-text-100 hover:bg-white/10 transition-colors"

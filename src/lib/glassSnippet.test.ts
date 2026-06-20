@@ -25,6 +25,15 @@ describe('toGlassCss', () => {
     expect(toGlassCss({ blur: 10, opacity: 0.1, radius: -2, angle: 0 })).toContain('border-radius: 0px');
     expect(toGlassCss({ blur: 10, opacity: 0.1, radius: 100, angle: 0 })).toContain('border-radius: 32px');
   });
+
+  it('clamps derived alpha values to max 1.0 (border and gradient)', () => {
+    const css = toGlassCss({ blur: 14, opacity: 0.6, radius: 8, angle: 0 });
+    // border alpha: min(0.6*2, 1) = 1.00, gradient: min(0.6*1.5, 1) = 0.90
+    expect(css).toContain('rgba(255, 255, 255, 1.00)'); // border
+    // gradient rgba value should never exceed 1.0
+    const alphaValues = [...css.matchAll(/rgba\(255, 255, 255, (\d+\.\d+)\)/g)].map(m => parseFloat(m[1]));
+    alphaValues.forEach(a => expect(a).toBeLessThanOrEqual(1.0));
+  });
 });
 
 describe('toTailwind', () => {
