@@ -1,0 +1,15 @@
+PLACEHOLDER — La foto real del usuario va aquí como photo.jpg (JPEG, ~400×400px, cuadrado o retrato 3:4).
+
+Mientras tanto, Hero.tsx debe usar:
+  src="/photo.svg"   (el placeholder SVG generado por el diseñador)
+
+El placeholder SVG (public/photo.svg) muestra un avatar ilustrado estilizado con:
+- Fondo oscuro bg-900
+- Figura masculina con glow accent azul (#6ea8fe)
+- Borde circular con acento translúcido
+- 400×400px viewBox
+
+Para reemplazar con foto real:
+1. Colocar la foto como C:\portfolio\public\photo.jpg (JPEG, mínimo 400×400, máximo 800×800)
+2. Actualizar src en Hero.tsx de "/photo.svg" a "/photo.jpg"
+3. Verificar que width/height están declarados en el <img> para evitar CLS
