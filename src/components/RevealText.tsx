@@ -25,7 +25,7 @@ function Char({
   // ponytail: espacio normal (U+0020) para que container.textContent coincida con el input
   return (
     <motion.span style={{ opacity, display: 'inline-block' }}>
-      {char}
+      {char === ' ' ? ' ' : char}
     </motion.span>
   );
 }
@@ -53,7 +53,7 @@ export default function RevealText({ text, className }: RevealTextProps) {
         const start = i / chars.length;
         return (
           <Char
-            key={i}
+            key={char + i}
             char={char}
             progress={scrollYProgress}
             range={[start - 0.1, start + 0.05]}

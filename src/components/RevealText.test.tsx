@@ -12,9 +12,13 @@ import * as framerMotion from 'framer-motion';
 
 describe('RevealText', () => {
   it('el texto accesible coincide con el input', () => {
-    const { container } = render(<RevealText text="hola mundo" />);
-    const got = container.textContent?.replace(/ /g, ' ');
-    expect(got).toBe('hola mundo');
+    const text = 'hola mundo';
+    const { container } = render(<RevealText text={text} />);
+    const got = container.textContent?.replace(/ /g, ' ');
+    expect(got).toBe(text);
+    // verifica que el texto se divide en spans por carácter (no es un <p>{text}</p> plano)
+    const spans = container.querySelectorAll('span');
+    expect(spans.length).toBe([...text].length);
   });
 
   it('con reduced-motion renderiza el texto plano', () => {
