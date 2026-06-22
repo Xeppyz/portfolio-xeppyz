@@ -3,6 +3,7 @@ import Glass from '../components/Glass';
 import { contactMeta } from '../data/contact';
 import SkillIcons from '../assets/vectors/skill-icons.svg?react';
 import WordsPullUp from '../components/WordsPullUp';
+import RevealText from '../components/RevealText';
 
 const SKILLS = [
   { id: 'react', label: 'React' },
@@ -37,7 +38,10 @@ export default function About() {
         {/* Bio */}
         <div ref={bioRef} className="reveal">
           <Glass className="p-8 md:p-10">
-            <p className="text-text-300 leading-relaxed text-lg">{contactMeta.bio}</p>
+            <RevealText
+              text={contactMeta.bio}
+              className="text-text-300 leading-relaxed text-lg"
+            />
           </Glass>
         </div>
 
