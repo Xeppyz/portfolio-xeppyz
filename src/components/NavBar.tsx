@@ -11,10 +11,14 @@ const NAV_LINKS = [
 
 export default function NavBar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3">
-      <Glass as="nav" aria-label="Navegación principal" className="px-6 py-3 flex items-center justify-between max-w-6xl mx-auto">
-        <span className="font-heading font-bold text-lg text-text-100">AC</span>
-        <ul className="flex gap-4 list-none m-0 p-0 overflow-x-auto">
+    <header className="fixed top-0 left-1/2 -translate-x-1/2 z-50 max-w-[calc(100%-1rem)]">
+      <Glass
+        as="nav"
+        aria-label="Navegación principal"
+        className="flex items-center gap-4 md:gap-6 rounded-t-none rounded-b-glass-lg px-6 py-2 md:px-8 shadow-glass"
+      >
+        <span className="font-heading font-bold text-lg text-text-100 shrink-0">AC</span>
+        <ul className="flex gap-4 md:gap-6 list-none m-0 p-0 overflow-x-auto">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href} className="shrink-0">
               <a
