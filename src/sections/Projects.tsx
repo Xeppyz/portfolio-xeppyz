@@ -3,6 +3,7 @@ import { projects } from '../data/projects';
 import { filterProjects, allTags } from '../lib/filterProjects';
 import ProjectCard from './ProjectCard';
 import type { Project } from '../data/projects';
+import WordsPullUp from '../components/WordsPullUp';
 
 type Props = { onOpen: (p: Project) => void };
 
@@ -17,7 +18,7 @@ export default function Projects({ onOpen }: Props) {
     <section id="projects" className="py-section px-4">
       <div className="max-w-6xl mx-auto flex flex-col gap-10">
         <div className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-text-100 mb-2">Proyectos</h2>
+          <WordsPullUp as="h2" text="Proyectos" className="font-heading text-3xl font-bold text-text-100 mb-2" />
           <p className="text-text-300 text-sm font-mono uppercase tracking-widest">Projects</p>
         </div>
 

@@ -1,6 +1,7 @@
 import Glass from '../components/Glass';
 import { contactLinks, contactMeta } from '../data/contact';
 import ContactIcons from '../assets/vectors/contact-icons.svg?react';
+import WordsPullUp from '../components/WordsPullUp';
 
 export default function Contact() {
   return (
@@ -10,7 +11,7 @@ export default function Contact() {
 
       <div className="max-w-2xl mx-auto flex flex-col gap-10 text-center">
         <div>
-          <h2 className="font-heading text-3xl font-bold text-text-100 mb-2">Contacto</h2>
+          <WordsPullUp as="h2" text="Contacto" className="font-heading text-3xl font-bold text-text-100 mb-2" />
           <p className="text-text-300 text-sm font-mono uppercase tracking-widest">Contact</p>
         </div>
 

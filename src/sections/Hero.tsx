@@ -1,6 +1,7 @@
 import { contactMeta } from '../data/contact';
 import Glass from '../components/Glass';
 import HeroBlob from '../assets/vectors/hero-blob.svg?react';
+import WordsPullUp from '../components/WordsPullUp';
 
 export default function Hero() {
   return (
@@ -20,9 +21,11 @@ export default function Hero() {
           <p className="text-accent font-mono text-sm tracking-widest uppercase">
             Portfolio
           </p>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-100 leading-tight">
-            {contactMeta.name}
-          </h1>
+          <WordsPullUp
+            as="h1"
+            text={contactMeta.name}
+            className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-text-100 leading-tight"
+          />
           <p className="text-xl text-text-300 font-medium">
             {contactMeta.tagline}
           </p>

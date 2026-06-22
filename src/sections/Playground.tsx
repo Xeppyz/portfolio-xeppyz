@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Glass from '../components/Glass';
 import { toGlassCss, toTailwind, type GlassSettings } from '../lib/glassSnippet';
+import WordsPullUp from '../components/WordsPullUp';
 
 const DEFAULT: GlassSettings = { blur: 14, opacity: 0.06, radius: 16, angle: 135 };
 
@@ -50,7 +51,7 @@ export default function Playground() {
     <section id="playground" className="py-section px-4">
       <div className="max-w-6xl mx-auto flex flex-col gap-10">
         <div className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-text-100 mb-2">Glass Lab</h2>
+          <WordsPullUp as="h2" text="Glass Lab" className="font-heading text-3xl font-bold text-text-100 mb-2" />
           <p className="text-text-300 text-sm font-mono uppercase tracking-widest">Playground</p>
         </div>
 

@@ -2,6 +2,7 @@ import useScrollReveal from '../lib/useScrollReveal';
 import Glass from '../components/Glass';
 import { contactMeta } from '../data/contact';
 import SkillIcons from '../assets/vectors/skill-icons.svg?react';
+import WordsPullUp from '../components/WordsPullUp';
 
 const SKILLS = [
   { id: 'react', label: 'React' },
@@ -29,7 +30,7 @@ export default function About() {
 
       <div className="max-w-6xl mx-auto flex flex-col gap-12">
         <div className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-text-100 mb-2">Sobre mí</h2>
+          <WordsPullUp as="h2" text="Sobre mí" className="font-heading text-3xl font-bold text-text-100 mb-2" />
           <p className="text-text-300 text-sm font-mono uppercase tracking-widest">About</p>
         </div>
 

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { experience } from '../data/experience';
 import Glass from '../components/Glass';
 import useScrollReveal from '../lib/useScrollReveal';
+import WordsPullUp from '../components/WordsPullUp';
 
 function formatDate(dateStr: string): string {
   if (dateStr === 'present') return 'Presente';
@@ -97,7 +98,7 @@ export default function Experience() {
     <section id="experience" className="py-section px-4">
       <div className="max-w-4xl mx-auto flex flex-col gap-10">
         <div className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-text-100 mb-2">Experiencia</h2>
+          <WordsPullUp as="h2" text="Experiencia" className="font-heading text-3xl font-bold text-text-100 mb-2" />
           <p className="text-text-300 text-sm font-mono uppercase tracking-widest">Experience</p>
         </div>
 
