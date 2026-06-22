@@ -22,7 +22,7 @@ function Char({
   range: [number, number];
 }) {
   const opacity = useTransform(progress, range, [0.2, 1]);
-  // ponytail: espacio normal (U+0020) para que container.textContent coincida con el input
+  // ponytail: NBSP (U+00A0) para que cada espacio sea un span visible y no colapse en inline-block
   return (
     <motion.span style={{ opacity, display: 'inline-block' }}>
       {char === ' ' ? ' ' : char}
