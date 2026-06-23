@@ -1,0 +1,43 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sistema de vacaciones Grupo Invercasa">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ea8fe"/>
+      <stop offset="100%" stop-color="#b58cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="58%" cy="34%" r="60%">
+      <stop offset="0%" stop-color="#6ea8fe" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#6ea8fe" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="640" height="360" fill="#0b0d12"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+
+  <!-- Calendar -->
+  <g transform="translate(200 86)">
+    <rect x="0" y="0" width="240" height="188" rx="18" fill="none" stroke="url(#grad)" stroke-width="6"/>
+    <path d="M0 44 H240" stroke="url(#grad)" stroke-width="4"/>
+    <rect x="48" y="-14" width="10" height="28" rx="5" fill="url(#grad)"/>
+    <rect x="182" y="-14" width="10" height="28" rx="5" fill="url(#grad)"/>
+    <!-- Day dots -->
+    <g fill="#ffffff" fill-opacity="0.14">
+      <circle cx="44" cy="78" r="9"/><circle cx="84" cy="78" r="9"/><circle cx="124" cy="78" r="9"/><circle cx="164" cy="78" r="9"/><circle cx="204" cy="78" r="9"/>
+      <circle cx="44" cy="118" r="9"/>
+    </g>
+    <!-- Selected vacation range -->
+    <rect x="74" y="108" width="120" height="20" rx="10" fill="url(#grad)" fill-opacity="0.85"/>
+    <circle cx="84" cy="118" r="9" fill="url(#grad)"/>
+    <circle cx="204" cy="118" r="9" fill="#ffffff" fill-opacity="0.14"/>
+    <circle cx="124" cy="158" r="9" fill="#ffffff" fill-opacity="0.14"/>
+    <circle cx="164" cy="158" r="9" fill="#ffffff" fill-opacity="0.14"/>
+  </g>
+
+  <!-- Sun / palm hint (vacaciones) -->
+  <g transform="translate(470 110)">
+    <circle cx="0" cy="0" r="26" fill="url(#grad)"/>
+    <g stroke="url(#grad)" stroke-width="5" stroke-linecap="round">
+      <path d="M0 -40 V-52"/><path d="M0 40 V52"/><path d="M-40 0 H-52"/><path d="M40 0 H52"/>
+      <path d="M28 -28 L37 -37"/><path d="M-28 28 L-37 37"/><path d="M28 28 L37 37"/><path d="M-28 -28 L-37 -37"/>
+    </g>
+  </g>
+</svg>

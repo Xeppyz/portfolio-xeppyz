@@ -1,0 +1,36 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Allison Silva Corp landing">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ea8fe"/>
+      <stop offset="100%" stop-color="#b58cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="68%" cy="32%" r="60%">
+      <stop offset="0%" stop-color="#6ea8fe" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#6ea8fe" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="640" height="360" fill="#0b0d12"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+
+  <!-- Minimal page / browser frame -->
+  <rect x="96" y="86" width="300" height="200" rx="16" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+  <circle cx="120" cy="110" r="4" fill="#ffffff" fill-opacity="0.18"/>
+  <circle cx="136" cy="110" r="4" fill="#ffffff" fill-opacity="0.18"/>
+  <circle cx="152" cy="110" r="4" fill="#ffffff" fill-opacity="0.18"/>
+  <!-- Content lines -->
+  <rect x="120" y="140" width="160" height="14" rx="7" fill="url(#grad)"/>
+  <rect x="120" y="166" width="240" height="8" rx="4" fill="#ffffff" fill-opacity="0.14"/>
+  <rect x="120" y="182" width="200" height="8" rx="4" fill="#ffffff" fill-opacity="0.14"/>
+  <rect x="120" y="216" width="96" height="26" rx="13" fill="url(#grad)"/>
+
+  <!-- Paper plane (contacto) -->
+  <g transform="translate(404 150) rotate(-12)" stroke="url(#grad)" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path d="M0 64 L128 0 L96 128 L56 84 Z"/>
+    <path d="M0 64 L56 84 L96 128" stroke-opacity="0.5"/>
+  </g>
+  <!-- Trail dots -->
+  <circle cx="392" cy="232" r="5" fill="url(#grad)"/>
+  <circle cx="372" cy="252" r="3.5" fill="#6ea8fe" fill-opacity="0.6"/>
+  <circle cx="356" cy="268" r="2.5" fill="#6ea8fe" fill-opacity="0.35"/>
+</svg>

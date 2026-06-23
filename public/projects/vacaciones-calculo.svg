@@ -1,0 +1,50 @@
+<svg viewBox="0 0 720 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pantalla: cálculo vacacional">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ea8fe"/><stop offset="100%" stop-color="#b58cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="450" rx="16" fill="#11141b"/>
+  <rect x="0" y="0" width="64" height="450" rx="16" fill="#0b0d12"/>
+  <rect x="20" y="28" width="24" height="24" rx="7" fill="url(#g)"/>
+  <g fill="#ffffff" fill-opacity="0.18"><rect x="22" y="84" width="20" height="20" rx="6"/><rect x="22" y="120" width="20" height="20" rx="6"/><rect x="22" y="156" width="20" height="20" rx="6"/></g>
+
+  <text x="92" y="50" fill="#f4f6fb" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700">Cálculo vacacional</text>
+  <!-- ERP badge -->
+  <rect x="556" y="32" width="140" height="28" rx="14" fill="#0b0d12"/>
+  <circle cx="576" cy="46" r="5" fill="#6ea8fe"/>
+  <text x="590" y="51" fill="#aab2c5" font-family="Segoe UI" font-size="12">Sincronizado ERP</text>
+
+  <!-- Employee card -->
+  <rect x="92" y="78" width="604" height="76" rx="14" fill="#0b0d12"/>
+  <circle cx="134" cy="116" r="24" fill="url(#g)"/>
+  <text x="176" y="110" fill="#f4f6fb" font-family="Segoe UI" font-size="16" font-weight="600">Allan Silva</text>
+  <text x="176" y="132" fill="#5d677e" font-family="Segoe UI" font-size="12">Analista de Programación · Sistemas · Ingreso 02/2024</text>
+
+  <!-- Stat tiles -->
+  <g font-family="Segoe UI">
+    <rect x="92" y="170" width="194" height="110" rx="14" fill="#0b0d12"/>
+    <text x="112" y="200" fill="#5d677e" font-size="12">Acumuladas</text>
+    <text x="112" y="248" fill="#f4f6fb" font-size="40" font-weight="700">30</text>
+    <text x="232" y="248" fill="#5d677e" font-size="13">días</text>
+
+    <rect x="297" y="170" width="194" height="110" rx="14" fill="#0b0d12"/>
+    <text x="317" y="200" fill="#5d677e" font-size="12">Tomadas</text>
+    <text x="317" y="248" fill="#f4f6fb" font-size="40" font-weight="700">12</text>
+    <text x="372" y="248" fill="#5d677e" font-size="13">días</text>
+
+    <rect x="502" y="170" width="194" height="110" rx="14" fill="url(#g)"/>
+    <text x="522" y="200" fill="#0b0d12" font-size="12" font-weight="600">Disponibles</text>
+    <text x="522" y="248" fill="#0b0d12" font-size="40" font-weight="800">18</text>
+    <text x="577" y="248" fill="#0b0d12" font-size="13" font-weight="600">días</text>
+  </g>
+
+  <!-- Breakdown -->
+  <rect x="92" y="296" width="604" height="118" rx="14" fill="#0b0d12"/>
+  <text x="112" y="324" fill="#f4f6fb" font-family="Segoe UI" font-size="13" font-weight="600">Detalle del cálculo</text>
+  <g font-family="Segoe UI" font-size="12">
+    <text x="112" y="352" fill="#aab2c5">Antigüedad</text><text x="676" y="352" fill="#f4f6fb" text-anchor="end">2 años 4 meses</text>
+    <text x="112" y="378" fill="#aab2c5">Factor mensual</text><text x="676" y="378" fill="#f4f6fb" text-anchor="end">2.5 días / mes</text>
+    <text x="112" y="404" fill="#aab2c5">Proporción del período actual</text><text x="676" y="404" fill="url(#g)" text-anchor="end" font-weight="700">+10 días</text>
+  </g>
+</svg>

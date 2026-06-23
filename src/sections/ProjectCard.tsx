@@ -19,10 +19,19 @@ export default function ProjectCard({ project, onOpen }: Props) {
       }}
       aria-label={`Ver detalles de ${project.title}`}
     >
-      {/* Image placeholder with aspect ratio */}
-      <div className="aspect-video bg-bg-800 flex items-center justify-center text-text-500">
-        <span className="text-xs font-mono text-text-300/50">{project.year}</span>
-      </div>
+      {/* Image (or year placeholder if none) */}
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={`Vista previa de ${project.title}`}
+          loading="lazy"
+          className="aspect-video w-full object-cover bg-bg-800"
+        />
+      ) : (
+        <div className="aspect-video bg-bg-800 flex items-center justify-center text-text-500">
+          <span className="text-xs font-mono text-text-300/50">{project.year}</span>
+        </div>
+      )}
 
       <div className="flex flex-col gap-3 p-5 flex-1">
         <h3 className="font-heading font-semibold text-text-100 text-lg leading-tight">

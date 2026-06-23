@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Documentos personales (certificados/título) — no publicar
+public/certs/
+
+# Preview/dev local
+.claude/launch.json

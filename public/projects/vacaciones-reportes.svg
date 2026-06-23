@@ -1,0 +1,50 @@
+<svg viewBox="0 0 720 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pantalla: reportes por departamento">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ea8fe"/><stop offset="100%" stop-color="#b58cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="450" rx="16" fill="#11141b"/>
+  <rect x="0" y="0" width="64" height="450" rx="16" fill="#0b0d12"/>
+  <rect x="20" y="28" width="24" height="24" rx="7" fill="url(#g)"/>
+  <g fill="#ffffff" fill-opacity="0.18"><rect x="22" y="84" width="20" height="20" rx="6"/><rect x="22" y="120" width="20" height="20" rx="6"/><rect x="22" y="156" width="20" height="20" rx="6"/></g>
+
+  <text x="92" y="50" fill="#f4f6fb" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700">Reporte por departamento</text>
+
+  <!-- Stat tiles -->
+  <g font-family="Segoe UI">
+    <rect x="92" y="72" width="190" height="62" rx="12" fill="#0b0d12"/>
+    <text x="108" y="98" fill="#5d677e" font-size="11">Colaboradores</text>
+    <text x="108" y="122" fill="#f4f6fb" font-size="22" font-weight="700">128</text>
+    <rect x="296" y="72" width="190" height="62" rx="12" fill="#0b0d12"/>
+    <text x="312" y="98" fill="#5d677e" font-size="11">De vacaciones</text>
+    <text x="312" y="122" fill="url(#g)" font-size="22" font-weight="700">23</text>
+    <rect x="500" y="72" width="196" height="62" rx="12" fill="#0b0d12"/>
+    <text x="516" y="98" fill="#5d677e" font-size="11">Días pendientes</text>
+    <text x="516" y="122" fill="#f4f6fb" font-size="22" font-weight="700">412</text>
+  </g>
+
+  <!-- Bars by department -->
+  <rect x="92" y="150" width="394" height="264" rx="14" fill="#0b0d12"/>
+  <g font-family="Segoe UI" font-size="12" fill="#aab2c5">
+    <text x="112" y="186">Sistemas</text><text x="112" y="222">Finanzas</text><text x="112" y="258">RRHH</text><text x="112" y="294">Ventas</text><text x="112" y="330">Operaciones</text><text x="112" y="366">Soporte</text>
+  </g>
+  <g>
+    <rect x="210" y="174" width="180" height="16" rx="8" fill="url(#g)"/>
+    <rect x="210" y="210" width="130" height="16" rx="8" fill="url(#g)" fill-opacity="0.85"/>
+    <rect x="210" y="246" width="96" height="16" rx="8" fill="url(#g)" fill-opacity="0.7"/>
+    <rect x="210" y="282" width="156" height="16" rx="8" fill="url(#g)" fill-opacity="0.85"/>
+    <rect x="210" y="318" width="110" height="16" rx="8" fill="url(#g)" fill-opacity="0.7"/>
+    <rect x="210" y="354" width="74" height="16" rx="8" fill="url(#g)" fill-opacity="0.6"/>
+  </g>
+
+  <!-- Donut -->
+  <rect x="500" y="150" width="196" height="264" rx="14" fill="#0b0d12"/>
+  <text x="520" y="182" fill="#f4f6fb" font-family="Segoe UI" font-size="13" font-weight="600">Uso anual</text>
+  <g transform="translate(598 290)">
+    <circle r="58" fill="none" stroke="#181c27" stroke-width="20"/>
+    <circle r="58" fill="none" stroke="url(#g)" stroke-width="20" stroke-linecap="round"
+            stroke-dasharray="248 364" transform="rotate(-90)"/>
+    <text x="0" y="6" fill="#f4f6fb" font-family="Segoe UI" font-size="22" font-weight="700" text-anchor="middle">68%</text>
+  </g>
+</svg>

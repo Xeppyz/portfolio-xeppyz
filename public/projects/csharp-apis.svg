@@ -1,0 +1,33 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APIs REST en C#">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ea8fe"/><stop offset="100%" stop-color="#b58cff"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="60%"><stop offset="0%" stop-color="#b58cff" stop-opacity="0.24"/><stop offset="100%" stop-color="#b58cff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="#0b0d12"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+
+  <!-- Braces -->
+  <text x="120" y="232" fill="url(#grad)" font-family="Consolas, monospace" font-size="150" font-weight="700">{ }</text>
+
+  <!-- Endpoints -->
+  <g font-family="Consolas, monospace" font-size="16">
+    <rect x="330" y="104" width="200" height="34" rx="9" fill="#11141b"/>
+    <rect x="344" y="114" width="40" height="14" rx="7" fill="#3ddc97" fill-opacity="0.2"/>
+    <text x="350" y="126" fill="#3ddc97" font-size="11" font-weight="700">GET</text>
+    <text x="394" y="126" fill="#aab2c5">/api/ordenes</text>
+
+    <rect x="330" y="148" width="200" height="34" rx="9" fill="#11141b"/>
+    <rect x="344" y="158" width="44" height="14" rx="7" fill="#6ea8fe" fill-opacity="0.2"/>
+    <text x="350" y="170" fill="#6ea8fe" font-size="11" font-weight="700">POST</text>
+    <text x="398" y="170" fill="#aab2c5">/api/clientes</text>
+
+    <rect x="330" y="192" width="200" height="34" rx="9" fill="#11141b"/>
+    <rect x="344" y="202" width="36" height="14" rx="7" fill="#ffb454" fill-opacity="0.2"/>
+    <text x="350" y="214" fill="#ffb454" font-size="11" font-weight="700">PUT</text>
+    <text x="390" y="214" fill="#aab2c5">/api/inventario</text>
+  </g>
+
+  <!-- C# tag -->
+  <text x="330" y="262" fill="#b58cff" font-family="Segoe UI, sans-serif" font-size="22" font-weight="800">C#</text>
+  <text x="372" y="262" fill="#5d677e" font-family="Segoe UI, sans-serif" font-size="16">· ASP.NET</text>
+</svg>

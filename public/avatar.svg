@@ -1,0 +1,70 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar ilustrado de Allan Silva">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#2a3358"/>
+      <stop offset="100%" stop-color="#161a2e"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0c6a4"/>
+      <stop offset="100%" stop-color="#e0ac86"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26345a"/>
+      <stop offset="100%" stop-color="#1a2440"/>
+    </linearGradient>
+    <clipPath id="round"><circle cx="200" cy="200" r="200"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="400" height="400" fill="url(#bg)"/>
+
+    <!-- Shoulders / suit -->
+    <path d="M70 400 C70 320 120 290 165 280 L235 280 C280 290 330 320 330 400 Z" fill="url(#suit)"/>
+    <!-- Suit lapels -->
+    <path d="M165 282 L200 330 L175 360 L150 300 Z" fill="#1d294a"/>
+    <path d="M235 282 L200 330 L225 360 L250 300 Z" fill="#1d294a"/>
+    <!-- Shirt -->
+    <path d="M178 280 L200 330 L222 280 Z" fill="#f4f6fb"/>
+    <!-- Tie -->
+    <path d="M200 286 L210 300 L200 318 L190 300 Z" fill="#3b4a78"/>
+    <path d="M193 318 L207 318 L213 380 L200 396 L187 380 Z" fill="#33426c"/>
+
+    <!-- Neck -->
+    <path d="M178 250 L178 285 Q200 300 222 285 L222 250 Z" fill="#d59c75"/>
+
+    <!-- Ears -->
+    <circle cx="138" cy="190" r="16" fill="url(#skin)"/>
+    <circle cx="262" cy="190" r="16" fill="url(#skin)"/>
+
+    <!-- Face -->
+    <path d="M145 165 C145 110 160 80 200 80 C240 80 255 110 255 165 C255 215 232 250 200 250 C168 250 145 215 145 165 Z" fill="url(#skin)"/>
+
+    <!-- Hair: short curly/wavy top -->
+    <path d="M142 168 C132 150 134 128 142 112 C133 108 138 92 150 90 C150 74 168 60 200 60 C232 60 250 74 250 90 C262 92 267 108 258 112 C266 128 268 150 258 168 C256 140 250 122 244 116 C240 128 232 134 224 132 C212 120 188 120 176 132 C168 134 160 128 156 116 C150 122 144 140 142 168 Z" fill="#241c18"/>
+    <!-- Curl bumps along hairline -->
+    <g fill="#2c221c">
+      <circle cx="160" cy="98" r="13"/><circle cx="182" cy="90" r="14"/>
+      <circle cx="200" cy="86" r="14"/><circle cx="218" cy="90" r="14"/>
+      <circle cx="240" cy="98" r="13"/><circle cx="152" cy="116" r="11"/>
+      <circle cx="248" cy="116" r="11"/>
+    </g>
+
+    <!-- Eyebrows -->
+    <path d="M165 158 Q180 150 194 157" stroke="#2a201a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M206 157 Q220 150 235 158" stroke="#2a201a" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+    <!-- Eyes -->
+    <ellipse cx="178" cy="172" rx="9" ry="10" fill="#fff"/>
+    <ellipse cx="222" cy="172" rx="9" ry="10" fill="#fff"/>
+    <circle cx="179" cy="173" r="5" fill="#3b2c22"/>
+    <circle cx="223" cy="173" r="5" fill="#3b2c22"/>
+    <circle cx="181" cy="171" r="1.6" fill="#fff"/>
+    <circle cx="225" cy="171" r="1.6" fill="#fff"/>
+
+    <!-- Nose -->
+    <path d="M200 178 L195 200 Q200 205 205 200 Z" fill="#d59c75"/>
+
+    <!-- Smile -->
+    <path d="M182 214 Q200 228 218 214" stroke="#9c5d44" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

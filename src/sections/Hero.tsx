@@ -1,19 +1,32 @@
 import { contactMeta } from '../data/contact';
-import Glass from '../components/Glass';
 import HeroBlob from '../assets/vectors/hero-blob.svg?react';
 import WordsPullUp from '../components/WordsPullUp';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import FiberBurst from '../components/FiberBurst';
+import AvatarOrbit from '../components/AvatarOrbit';
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  // Parallax ligado al scroll (lo controla el usuario → activo aun con reduced-motion).
+  const blobY = useTransform(scrollY, [0, 700], [0, 220]);
+  const photoY = useTransform(scrollY, [0, 700], [0, -60]);
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center overflow-hidden px-4 pt-20 pb-12"
     >
-      {/* Decorative blob — aria-hidden, no motion issue as CSS animation handles it */}
-      <HeroBlob
-        className="absolute -top-32 -right-32 w-[600px] h-[600px] opacity-30 animate-float pointer-events-none"
+      {/* Decorative blob — parallax en scroll + float CSS independiente */}
+      <motion.div
+        className="absolute -top-32 -right-32 pointer-events-none"
+        style={{ y: blobY }}
         aria-hidden="true"
-      />
+      >
+        <HeroBlob className="w-[600px] h-[600px] opacity-30 animate-float" />
+      </motion.div>
+
+      {/* Estallido de fibra — se expande al hacer scroll (parallax Hero→About) */}
+      <FiberBurst />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Text */}
@@ -54,19 +67,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Photo */}
-        <div className="flex justify-center lg:justify-end">
-          <Glass className="p-2 rounded-full shadow-accent-glow">
-            <img
-              src="/photo.svg"
-              alt="Foto de Alex Campos"
-              width="320"
-              height="320"
-              loading="eager"
-              className="rounded-full object-cover w-64 h-64 md:w-80 md:h-80"
-            />
-          </Glass>
-        </div>
+        {/* Avatar con partículas de skills reactivas al mouse */}
+        <motion.div className="flex justify-center lg:justify-end" style={{ y: photoY }}>
+          <AvatarOrbit />
+        </motion.div>
       </div>
     </section>
   );

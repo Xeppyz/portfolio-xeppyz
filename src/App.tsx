@@ -6,6 +6,7 @@ import About from './sections/About';
 import Projects from './sections/Projects';
 import ProjectModal from './sections/ProjectModal';
 import Experience from './sections/Experience';
+import Education from './sections/Education';
 import Playground from './sections/Playground';
 import Contact from './sections/Contact';
 
@@ -19,6 +20,7 @@ export default function App() {
         <About />
         <Projects onOpen={setSelectedProject} />
         <Experience />
+        <Education />
         <Playground />
         <Contact />
       </main>

@@ -1,0 +1,36 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CasaVision app de técnicos">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ea8fe"/><stop offset="100%" stop-color="#b58cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="46%" cy="36%" r="60%">
+      <stop offset="0%" stop-color="#6ea8fe" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#6ea8fe" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="#0b0d12"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+
+  <!-- Phone -->
+  <g transform="translate(214 70)">
+    <rect x="0" y="0" width="130" height="224" rx="24" fill="none" stroke="url(#grad)" stroke-width="6"/>
+    <rect x="48" y="12" width="34" height="6" rx="3" fill="url(#grad)"/>
+    <rect x="18" y="40" width="94" height="14" rx="7" fill="#ffffff" fill-opacity="0.14"/>
+    <rect x="18" y="64" width="94" height="30" rx="8" fill="url(#grad)" fill-opacity="0.85"/>
+    <rect x="18" y="104" width="94" height="22" rx="8" fill="#ffffff" fill-opacity="0.1"/>
+    <rect x="18" y="134" width="94" height="22" rx="8" fill="#ffffff" fill-opacity="0.1"/>
+    <rect x="18" y="164" width="94" height="22" rx="8" fill="#ffffff" fill-opacity="0.1"/>
+  </g>
+
+  <!-- Wrench (servicio técnico) -->
+  <g transform="translate(420 150) rotate(40)" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 0 L72 72"/>
+    <path d="M-6 -18 a24 24 0 1 0 30 30 L8 -2 L-4 -14 Z"/>
+  </g>
+  <!-- Signal (aprovisionamiento) -->
+  <g transform="translate(452 96)" stroke="url(#grad)" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M0 24 a34 34 0 0 1 48 0"/>
+    <path d="M10 34 a20 20 0 0 1 28 0"/>
+    <circle cx="24" cy="44" r="3.5" fill="url(#grad)" stroke="none"/>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Clik Awards — votación online">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ea8fe"/>
+      <stop offset="100%" stop-color="#b58cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="40%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#6ea8fe" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#6ea8fe" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="640" height="360" fill="#0b0d12"/>
+  <rect width="640" height="360" fill="url(#glow)"/>
+
+  <!-- Trophy (premio) -->
+  <g transform="translate(230 96)" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M-40 0 H40 V24 C40 60 22 84 0 84 C-22 84 -40 60 -40 24 Z"/>
+    <path d="M-40 8 C-72 8 -72 -28 -44 -28"/>
+    <path d="M40 8 C72 8 72 -28 44 -28"/>
+    <path d="M0 84 V108"/>
+    <path d="M-28 130 H28 L22 108 H-22 Z"/>
+    <!-- Star -->
+    <path d="M0 18 L7 34 L24 34 L10 44 L15 60 L0 50 L-15 60 L-10 44 L-24 34 L-7 34 Z"
+          fill="url(#grad)" stroke="none"/>
+  </g>
+
+  <!-- Ballot card with check (voto) -->
+  <g transform="translate(388 150)">
+    <rect x="0" y="0" width="150" height="108" rx="12" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2"/>
+    <rect x="20" y="26" width="70" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.16"/>
+    <rect x="20" y="48" width="100" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.16"/>
+    <rect x="20" y="70" width="54" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.16"/>
+    <!-- Check bubble -->
+    <circle cx="118" cy="80" r="22" fill="url(#grad)"/>
+    <path d="M107 80 L115 89 L131 70" fill="none" stroke="#0b0d12" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Realtime bars -->
+  <g fill="url(#grad)">
+    <rect x="392" y="300" width="14" height="22" rx="3"/>
+    <rect x="414" y="288" width="14" height="34" rx="3"/>
+    <rect x="436" y="272" width="14" height="50" rx="3"/>
+    <rect x="458" y="294" width="14" height="28" rx="3"/>
+  </g>
+</svg>

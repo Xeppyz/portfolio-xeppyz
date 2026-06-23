@@ -1,0 +1,55 @@
+<svg viewBox="0 0 720 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pantalla: agendar vacaciones">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ea8fe"/><stop offset="100%" stop-color="#b58cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="450" rx="16" fill="#11141b"/>
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="64" height="450" rx="16" fill="#0b0d12"/>
+  <rect x="20" y="28" width="24" height="24" rx="7" fill="url(#g)"/>
+  <g fill="#ffffff" fill-opacity="0.18"><rect x="22" y="84" width="20" height="20" rx="6"/><rect x="22" y="120" width="20" height="20" rx="6"/><rect x="22" y="156" width="20" height="20" rx="6"/></g>
+  <!-- Header -->
+  <text x="92" y="50" fill="#f4f6fb" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700">Agendar vacaciones</text>
+  <!-- Toggle Individual / Masivo -->
+  <rect x="92" y="66" width="220" height="34" rx="17" fill="#0b0d12"/>
+  <rect x="96" y="70" width="106" height="26" rx="13" fill="url(#g)"/>
+  <text x="116" y="88" fill="#0b0d12" font-family="Segoe UI" font-size="13" font-weight="700">Individual</text>
+  <text x="224" y="88" fill="#aab2c5" font-family="Segoe UI" font-size="13">Masivo</text>
+
+  <!-- Calendar -->
+  <rect x="92" y="118" width="356" height="296" rx="14" fill="#0b0d12"/>
+  <text x="112" y="150" fill="#f4f6fb" font-family="Segoe UI" font-size="14" font-weight="600">Junio 2026</text>
+  <g fill="#5d677e" font-family="Segoe UI" font-size="11">
+    <text x="120" y="178">L</text><text x="166" y="178">M</text><text x="212" y="178">M</text><text x="258" y="178">J</text><text x="304" y="178">V</text><text x="350" y="178">S</text><text x="396" y="178">D</text>
+  </g>
+  <g fill="#aab2c5" font-family="Segoe UI" font-size="12">
+    <!-- week rows of day numbers -->
+    <text x="116" y="208">1</text><text x="162" y="208">2</text><text x="208" y="208">3</text><text x="254" y="208">4</text><text x="300" y="208">5</text><text x="346" y="208">6</text><text x="392" y="208">7</text>
+    <text x="392" y="244">14</text>
+  </g>
+  <!-- Selected range -->
+  <rect x="150" y="226" width="200" height="26" rx="13" fill="url(#g)" fill-opacity="0.9"/>
+  <g fill="#0b0d12" font-family="Segoe UI" font-size="12" font-weight="700">
+    <text x="158" y="244">8</text><text x="204" y="244">9</text><text x="248" y="244">10</text><text x="294" y="244">11</text><text x="338" y="244">12</text>
+  </g>
+  <g fill="#aab2c5" font-family="Segoe UI" font-size="12">
+    <text x="116" y="280">15</text><text x="162" y="280">16</text><text x="208" y="280">17</text><text x="254" y="280">18</text><text x="300" y="280">19</text><text x="346" y="280">20</text><text x="392" y="280">21</text>
+  </g>
+
+  <!-- Form panel -->
+  <rect x="464" y="118" width="232" height="296" rx="14" fill="#0b0d12"/>
+  <text x="484" y="150" fill="#f4f6fb" font-family="Segoe UI" font-size="14" font-weight="600">Solicitud</text>
+  <rect x="484" y="166" width="192" height="34" rx="9" fill="#181c27"/>
+  <text x="496" y="188" fill="#5d677e" font-family="Segoe UI" font-size="12">Colaborador</text>
+  <rect x="484" y="210" width="192" height="34" rx="9" fill="#181c27"/>
+  <text x="496" y="232" fill="#5d677e" font-family="Segoe UI" font-size="12">Departamento</text>
+  <rect x="484" y="254" width="92" height="34" rx="9" fill="#181c27"/>
+  <text x="496" y="276" fill="#5d677e" font-family="Segoe UI" font-size="12">Desde</text>
+  <rect x="584" y="254" width="92" height="34" rx="9" fill="#181c27"/>
+  <text x="596" y="276" fill="#5d677e" font-family="Segoe UI" font-size="12">Hasta</text>
+  <text x="484" y="316" fill="#aab2c5" font-family="Segoe UI" font-size="12">Días solicitados</text>
+  <text x="660" y="316" fill="url(#g)" font-family="Segoe UI" font-size="14" font-weight="700" text-anchor="end">5</text>
+  <rect x="484" y="360" width="192" height="38" rx="11" fill="url(#g)"/>
+  <text x="580" y="384" fill="#0b0d12" font-family="Segoe UI" font-size="13" font-weight="700" text-anchor="middle">Confirmar</text>
+</svg>

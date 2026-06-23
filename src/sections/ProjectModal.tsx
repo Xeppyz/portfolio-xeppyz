@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Project } from '../data/projects';
 import Glass from '../components/Glass';
@@ -10,10 +10,13 @@ type Props = {
 
 export default function ProjectModal({ project, onClose }: Props) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const [slide, setSlide] = useState(0);
+  const gallery = project?.gallery ?? [];
 
-  // Focus the close button when modal opens
+  // Focus the close button + reset carousel when modal opens
   useEffect(() => {
     if (project) {
+      setSlide(0);
       // Small timeout to let AnimatePresence mount
       const t = setTimeout(() => closeButtonRef.current?.focus(), 50);
       return () => clearTimeout(t);
@@ -75,6 +78,55 @@ export default function ProjectModal({ project, onClose }: Props) {
 
               {/* Year */}
               <p className="text-text-300 text-sm font-mono">{project.year}</p>
+
+              {/* Carrusel de mockups (proyectos sin enlace público) */}
+              {gallery.length > 0 && (
+                <div className="relative">
+                  <div className="aspect-video w-full overflow-hidden rounded-xl bg-bg-800 border border-white/10">
+                    <AnimatePresence mode="wait" initial={false}>
+                      <motion.img
+                        key={slide}
+                        src={gallery[slide]}
+                        alt={`Mockup ${slide + 1} de ${gallery.length} — ${project.title}`}
+                        initial={{ opacity: 0, x: 32 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -32 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        className="w-full h-full object-cover"
+                      />
+                    </AnimatePresence>
+                  </div>
+
+                  {gallery.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => setSlide(s => (s - 1 + gallery.length) % gallery.length)}
+                        aria-label="Anterior"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-bg-900/70 text-text-100 backdrop-blur hover:bg-bg-900 transition-colors"
+                      >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                      </button>
+                      <button
+                        onClick={() => setSlide(s => (s + 1) % gallery.length)}
+                        aria-label="Siguiente"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-bg-900/70 text-text-100 backdrop-blur hover:bg-bg-900 transition-colors"
+                      >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                      </button>
+                      <div className="flex justify-center gap-2 mt-3">
+                        {gallery.map((_, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setSlide(i)}
+                            aria-label={`Ir al mockup ${i + 1}`}
+                            className={`h-2 rounded-full transition-all ${i === slide ? 'w-6 bg-accent' : 'w-2 bg-white/20 hover:bg-white/40'}`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
