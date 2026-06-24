@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
+import useIsMobile from '../lib/useIsMobile';
 
 // "Estallido de Fibra" — capa decorativa que se expande al hacer scroll (Hero→About).
 // 3 anillos a distinta velocidad para un parallax marcado.
@@ -20,6 +21,7 @@ function spokes({ r, count, offset, width }: Ring) {
 }
 
 export default function FiberBurst() {
+  const isMobile = useIsMobile();
   const { scrollY } = useScroll();
 
   // Cada anillo se expande, gira y se desvanece a su propio ritmo.
@@ -62,7 +64,7 @@ export default function FiberBurst() {
           return (
             <motion.g
               key={ri}
-              style={{ scale: layer.scale, rotate: layer.rotate, opacity: layer.opacity }}
+              style={isMobile ? { opacity: 0.28 } : { scale: layer.scale, rotate: layer.rotate, opacity: layer.opacity }}
             >
               {spokes(ring).map((s, i) => (
                 <g key={i}>

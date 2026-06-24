@@ -4,12 +4,14 @@ import WordsPullUp from '../components/WordsPullUp';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import FiberBurst from '../components/FiberBurst';
 import AvatarOrbit from '../components/AvatarOrbit';
+import useIsMobile from '../lib/useIsMobile';
 
 export default function Hero() {
+  const isMobile = useIsMobile();
   const { scrollY } = useScroll();
-  // Parallax ligado al scroll (lo controla el usuario → activo aun con reduced-motion).
-  const blobY = useTransform(scrollY, [0, 700], [0, 220]);
-  const photoY = useTransform(scrollY, [0, 700], [0, -60]);
+  // Parallax ligado al scroll. En móvil lo dejamos estático (lagueaba).
+  const blobY = useTransform(scrollY, [0, 700], [0, isMobile ? 0 : 220]);
+  const photoY = useTransform(scrollY, [0, 700], [0, isMobile ? 0 : -60]);
 
   return (
     <section

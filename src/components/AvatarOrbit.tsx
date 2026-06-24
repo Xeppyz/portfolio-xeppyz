@@ -3,6 +3,21 @@ import {
   motion, useMotionValue, useSpring, useTransform, useAnimationFrame, type MotionValue,
 } from 'framer-motion';
 import Glass from './Glass';
+import useIsMobile from '../lib/useIsMobile';
+
+const PILL_CLASS =
+  '-translate-x-1/2 -translate-y-1/2 px-2.5 py-1 rounded-full bg-bg-800/80 backdrop-blur border border-accent/30 text-accent text-xs font-mono whitespace-nowrap shadow-accent-glow select-none';
+
+// Versión estática (móvil): posición fija, sin motion values ni rAF.
+function StaticParticle({ label, a0, radius }: { label: string; a0: number; radius: number }) {
+  const x = Math.cos(a0) * radius;
+  const y = Math.sin(a0) * radius;
+  return (
+    <div className="absolute left-1/2 top-1/2" style={{ transform: `translate(${x}px, ${y}px)` }}>
+      <div className={PILL_CLASS}>{label}</div>
+    </div>
+  );
+}
 
 const SKILLS = ['Flutter', 'Dart', 'C#', 'JavaScript', 'React', 'Angular', 'Java', 'Kotlin', 'Go', 'Python'];
 const R_MIN = 150;      // banda de radios (px) — cerca del avatar, sin alejarse
@@ -43,14 +58,13 @@ function Particle({ label, a0, radius, rot, mouseX, mouseY }: {
 
   return (
     <motion.div className="absolute left-1/2 top-1/2" style={{ x, y }}>
-      <div className="-translate-x-1/2 -translate-y-1/2 px-2.5 py-1 rounded-full bg-bg-800/80 backdrop-blur border border-accent/30 text-accent text-xs font-mono whitespace-nowrap shadow-accent-glow select-none">
-        {label}
-      </div>
+      <div className={PILL_CLASS}>{label}</div>
     </motion.div>
   );
 }
 
 export default function AvatarOrbit() {
+  const isMobile = useIsMobile();
   const ref = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(9999);
   const mouseY = useMotionValue(9999);
@@ -69,10 +83,11 @@ export default function AvatarOrbit() {
     })
   ).current;
 
-  // Giro continuo del anillo (autoplay, pedido explícito).
-  useAnimationFrame(t => rot.set((t / 1000) * (Math.PI * 2 / PERIOD)));
+  // Giro continuo del anillo — solo en desktop (en móvil lagueaba).
+  useAnimationFrame(t => { if (!isMobile) rot.set((t / 1000) * (Math.PI * 2 / PERIOD)); });
 
   const onMove = (e: React.PointerEvent) => {
+    if (isMobile) return;
     const el = ref.current;
     if (!el) return;
     const r = el.getBoundingClientRect();
@@ -91,9 +106,11 @@ export default function AvatarOrbit() {
     >
       {/* Partículas (detrás del avatar, no bloquean el puntero) */}
       <div className="absolute inset-0 pointer-events-none">
-        {layout.map(p => (
-          <Particle key={p.label} label={p.label} a0={p.a0} radius={p.radius} rot={rot} mouseX={mouseX} mouseY={mouseY} />
-        ))}
+        {layout.map(p =>
+          isMobile
+            ? <StaticParticle key={p.label} label={p.label} a0={p.a0} radius={p.radius} />
+            : <Particle key={p.label} label={p.label} a0={p.a0} radius={p.radius} rot={rot} mouseX={mouseX} mouseY={mouseY} />
+        )}
       </div>
 
       {/* Avatar (memoji en video) */}
