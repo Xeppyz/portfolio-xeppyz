@@ -96,15 +96,17 @@ export default function AvatarOrbit() {
         ))}
       </div>
 
-      {/* Avatar */}
+      {/* Avatar (memoji en video) */}
       <Glass className="relative z-10 p-2 rounded-full shadow-accent-glow">
-        <img
-          src="/avatar.svg"
-          alt="Avatar de Allan Silva"
-          width="320"
-          height="320"
-          loading="eager"
-          className="rounded-full object-cover w-64 h-64 md:w-72 md:h-72"
+        <video
+          src="/avatar.mp4"
+          poster="/avatar.svg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label="Memoji de Allan Silva"
+          className="rounded-full object-cover w-64 h-64 md:w-72 md:h-72 bg-bg-800"
         />
       </Glass>
     </div>
